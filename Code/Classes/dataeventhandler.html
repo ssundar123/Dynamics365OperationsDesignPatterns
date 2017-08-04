@@ -1,0 +1,24 @@
+<!doctype html>
+<html lang="en">
+	<head>
+		<title>Dynamics 365 for operations design patterns</title>
+		<meta charset="utf-8">
+	</head>
+	<body>
+
+        //Data event handler
+        
+        [DataEventHandler(tableStr(<TableName>), DataEventType::ValidatingWrite)]
+        public static void <TableName>_onValidatingWrite(Common _sender, DataEventArgs _e)
+        {
+            boolean result = true;
+            ValidateEventArgs validateEventArgs = _e as ValidateEventArgs;
+            <TableName> <table> = _sender as <TableName>; 
+            if (<validation>)
+            {
+                result = checkFailed("Validation failed");
+            }
+            validateEventArgs.parmValidateResult(result);
+        }
+	</body>
+</html>

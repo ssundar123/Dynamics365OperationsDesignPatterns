@@ -1,0 +1,17 @@
+<!doctype html>
+<html lang="en">
+	<head>
+		<title>Dynamics 365 for operations design patterns</title>
+		<meta charset="utf-8">
+	</head>
+	<body>
+        //post event handler
+
+        [PostHandlerFor(classStr(MyClass2), methodstr(MyClass2, publisher))]
+        public static void PostHandler(XppPrePostArgs arguments)
+        {
+            int arg = arguments.getArg("i");
+            int retvalFromMethod = arguments.getReturnValue();
+        }     
+	</body>
+</html>

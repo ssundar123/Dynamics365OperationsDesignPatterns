@@ -1,0 +1,19 @@
+<!doctype html>
+<html lang="en">
+	<head>
+		<title>Dynamics 365 for operations design patterns</title>
+		<meta charset="utf-8">
+	</head>
+	<body>
+
+        //Hookable attribute usage 
+
+        [HookableAttribute(true)]
+        protected boolean parmHasArgs(boolean _hasArgs = hasArgs)
+        {
+            hasArgs = _hasArgs;
+            return hasArgs;
+        }
+
+	</body>
+</html>

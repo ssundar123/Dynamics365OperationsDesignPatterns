@@ -1,0 +1,22 @@
+<!doctype html>
+<html lang="en">
+	<head>
+		<title>Dynamics 365 for operations design patterns</title>
+		<meta charset="utf-8">
+	</head>
+	<body>
+
+        //SubscribesToAttribute usage
+        
+        [SubscribesTo(classstr(FMRentalCheckoutProcessor),delegatestr(FMRentalCheckoutProcessor, RentalTransactionAboutTobeFinalizedEvent))]
+        public static void RentalFinalizedEventHandler(FMRental rentalrecord, Struct rentalConfirmation)
+        {
+        }
+
+        delegate void RentalTransactionAboutTobeFinalizedEvent(
+            FMRental fmrentalrecord, struct RentalConfirmation)
+        {
+        }
+
+	</body>
+</html>

@@ -1,0 +1,35 @@
+<!doctype html>
+<html lang="en">
+<head>
+        <title>Dynamics 365 for operations design patterns</title>
+        <meta charset="utf-8">
+</head>
+<body>
+        //extend instance state
+        
+        [ExtensionOf(classStr(MyClass))]
+        final class MyClass_Extension
+        {
+            public int state;
+            private void new()
+            {
+            }
+        }
+        MyClass c = new MyClass();
+        c.state = 12;
+
+        //extend static state
+        [ExtensionOf(classStr(MyClass))]
+        final class MyClass_Extension
+        {
+            public int state;
+            public static int staticState;
+            static void TypeNew()
+            {
+                staticState = 77;
+            }
+        }
+
+
+</body>
+</html>

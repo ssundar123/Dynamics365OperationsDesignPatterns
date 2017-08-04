@@ -1,0 +1,42 @@
+<!doctype html>
+<html lang="en">
+<head>
+        <title>Dynamics 365 for operations design patterns</title>
+        <meta charset="utf-8">
+</head>
+<body>
+        //Extension class instance methods
+        [ExtensionOf(classStr(MyClass))]
+        final class MyClass_Extension
+        {
+            private void new()
+            {
+            }
+            public int ExtensionMethod(int arg)
+            {
+            }
+        }
+
+        MyClass c = new MyClass();
+        print c.ExtensionMethod(32);
+
+        //Extension class static methods
+        [ExtensionOf(classStr(MyClass))]
+        final class MyClass_Extension
+        {
+            private void new()
+            {
+            }
+            public int method1(int arg)
+            {
+            }
+            public static real CelsiusToFahrenheit(real celsius)
+            {
+                return (celsius * 9.0 / 5.0) + 32.0;
+            }
+        }
+
+        var temp = MyClass::CelsiusToFahrenheit(20.0);
+
+</body>
+</html>

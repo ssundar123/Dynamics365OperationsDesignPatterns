@@ -1,0 +1,21 @@
+<!doctype html>
+<html lang="en">
+	<head>
+		<title>Dynamics 365 for operations design patterns</title>
+		<meta charset="utf-8">
+	</head>
+	<body>
+		public static class InventSysQueryRangeUtil
+		{
+		    /// <summary>
+		    /// Returns the field ID for InventBatchId.
+		    /// </summary>
+		    /// <returns>The field ID for InventBatchId.</returns>
+		    [QueryRangeFunction]//Query range function
+		    public static FieldId inventBatchIdFieldNum()
+		    {
+			return fieldNum(InventDim, inventBatchId);
+		    }
+		}
+	</body>
+</html>
